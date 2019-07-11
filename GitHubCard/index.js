@@ -61,4 +61,9 @@ const followersArray = [];
   bigknell
 */
 
-function cardHolder(developer) {}
+function cardHolder(developer) {
+  //create an element
+  //enter into document
+  const newCard = document.createElement("div");
+  newCard.classList.add("card");
+}
