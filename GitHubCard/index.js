@@ -2,11 +2,11 @@
            (replacing the palceholder with your Github name):
            https://api.github.com/users/shelby-diamond
 */
-
 axios
-  .get("https://api.github.com/users/ShelbyDiamond")
+  .get(`https://api.github.com/users/ShelbyDiamond`)
 
   .then(data => {
+    cardHolder(data);
     console.log(data);
   });
 
@@ -32,6 +32,7 @@ axios
 */
 
 const followersArray = [];
+// const username = "ShelbyDiamond";
 
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return the following DOM element:
@@ -65,5 +66,45 @@ function cardHolder(developer) {
   //create an element
   //enter into document
   const newCard = document.createElement("div");
+  const img = document.createElement("img");
+  const cardInfo = document.createElement("div");
+  const name = document.createElement("h3");
+  const username = document.createElement("p");
+  const location = document.createElement("p");
+  const profile = document.createElement("p");
+  const followers = document.createElement("p");
+  const following = document.createElement("p");
+  const bio = document.createElement("p");
+
   newCard.classList.add("card");
+  cardInfo.classList.add("card-info");
+
+  newCard.textContent = developer.data.name;
+  newCard.textContent = developer.data.username;
+  newCard.textContent = developer.data.location;
+  newCard.textContent = developer.data.profile;
+  newCard.textContent = developer.data.followers;
+  newCard.textContent = developer.data.following;
+  newCard.textContent = developer.data.bio;
+  newCard.appendChild(img);
+  newCard.appendChild(cardInfo);
+  cardInfo.appendChild(name);
+  cardInfo.appendChild(username);
+  cardInfo.appendChild(location);
+  cardInfo.appendChild(profile);
+  cardInfo.appendChild(followers);
+  cardInfo.appendChild(following);
+  cardInfo.appendChild(bio);
+
+  const cards = document.querySelector(".cards");
+  cards.appendChild(newCard);
+  console.log(newCard);
 }
+
+const followersArray = [
+  "tetondan",
+  "dustinmyers",
+  "justsml",
+  "luishrd",
+  "bigknell"
+];
