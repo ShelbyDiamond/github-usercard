@@ -9,7 +9,9 @@ axios
     cardHolder(data);
     console.log(data);
   });
-
+  .catch(error => {
+    console.log("This GitHub is not working", error)
+  })
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
    data in order to use it to build your component function 
@@ -108,3 +110,9 @@ const followersArray = [
   "luishrd",
   "bigknell"
 ];
+followersArray.forEach(element => {
+  axios.get(`https://api.github.com/users/${element}`).then(data => {
+    cardHolder(data);
+    console.log(data);
+  });
+});
