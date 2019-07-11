@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "axios": "^0.19.0",
+    "readme-md-generator": "^0.5.2"
+  }
+}

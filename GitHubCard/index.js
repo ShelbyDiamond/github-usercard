@@ -1,8 +1,20 @@
 /* Step 1: using axios, send a GET request to the following URL 
            (replacing the palceholder with your Github name):
-           https://api.github.com/users/<your name>
+           https://api.github.com/users/shelby-diamond
 */
+const axios = require("axios");
 
+axios.get("https://api.github.com/users/shelby-diamond");
+
+.then(function (response) {
+  console.log(response)
+})
+.catch(function (error) {
+  console.log(error)
+})
+.finally(function () {
+  
+})
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
    data in order to use it to build your component function 
